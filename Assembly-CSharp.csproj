@@ -64,7 +64,10 @@
     <Compile Include="Assets\Scripts\Controllers\BallController.cs" />
     <Compile Include="Assets\Scripts\Controllers\GameController.cs" />
     <Compile Include="Assets\Scripts\Controllers\RacketController.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IBlock.cs" />
     <Compile Include="Assets\Scripts\Interfaces\Movable.cs" />
+    <Compile Include="Assets\Scripts\Models\Block.cs" />
+    <Compile Include="Assets\Scripts\Models\Brick.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/User/Desktop/workspace/UnityProjects/No Named Yet/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

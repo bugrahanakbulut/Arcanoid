@@ -34,11 +34,12 @@ public class GameController : MonoBehaviour {
     void InitLevelOneBlocks()
     {
         float y_pos = 3.5f;
-        float x_pos = -9.50f;
-        while (x_pos < 10.0f)
+        float x_pos = -8.5f;
+        while (x_pos < +8.5f)
         {
-            Instantiate(block, new Vector3(x_pos, y_pos, 0), Quaternion.identity);
-            x_pos += 1.15f;
+            GameObject instantiatedBlock = Instantiate(block, new Vector3(x_pos, y_pos, 0), Quaternion.identity);
+            x_pos += block.GetComponent<BoxCollider2D>().size.x * block.transform.localScale.x + 0.05f;
+            instantiatedBlock.transform.parent = GameObject.Find("Blocks").transform;
         }
     }
 

@@ -22,13 +22,30 @@ public class BallController : MonoBehaviour, Movable {
         return (ballPos.x - racketPos.x) / racketWidth;
     }
 
+    void HitBottomBorder()
+    {
+        GameObject controllers = GameObject.Find("Controllers");
+        if (controllers != null)
+        {
+            Transform gameControllerGameObject = controllers.transform.Find("GameController");
+            if (gameControllerGameObject != null)
+            {
+                GameController gameController = gameControllerGameObject.GetComponent<GameController>();
+                if (gameController != null)
+                {
+                    gameController.BallOutOfMap();
+                    Destroy(this.gameObject);
+                }
+            }
+        }
+    }
+
     public void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Block")
         {
             other.gameObject.GetComponent<Block>().DoDamage();
         }
-
         else if (other.gameObject.tag == "Racket")
         {
             float factor = HitFactor(transform.position, 
@@ -38,6 +55,10 @@ public class BallController : MonoBehaviour, Movable {
             Vector2 dir = new Vector2(factor, 1).normalized;
             GetComponent<Rigidbody2D>().velocity = dir * _ballSpeed;
         }
+        else if (other.gameObject.name == "Bottom Border")
+        {
+            HitBottomBorder();
+        }
     }
 
     public void MovementController()
@@ -45,5 +66,9 @@ public class BallController : MonoBehaviour, Movable {
         GetComponent<Rigidbody2D>().velocity = Vector3.up * _ballSpeed;
     }
 
+    public void SetSpeed(float speed)
+    {
+        _ballSpeed = speed;
+    }
 
 }

@@ -78,7 +78,7 @@ public class GameController : MonoBehaviour {
 
     void CreateBlockLine(GameObject block, float x_pos, float y_pos)
     {
-        while (x_pos < +8.5f)
+        while (x_pos < +6.0f)
         {
             GameObject instantiatedBlock = Instantiate(block, new Vector3(x_pos, y_pos, 0), Quaternion.identity);
             x_pos += block.GetComponent<BoxCollider2D>().size.x * block.transform.localScale.x + 0.05f;
@@ -100,7 +100,7 @@ public class GameController : MonoBehaviour {
     void InitLevelOneBlocks()
     {
         float y_pos = 4.5f;
-        float x_pos = -8.5f;
+        float x_pos = -6.0f;
         GameObject block = _blocks[0];
         CreateBlockLine(block, x_pos, y_pos);
     }
@@ -108,7 +108,7 @@ public class GameController : MonoBehaviour {
     void InitLevelTwoBlocks()
     {
         float y_pos = 4.5f;
-        float x_pos = -8.5f;
+        float x_pos = -6.0f;
         GameObject block = _blocks[0];
         CreateMultipleBlockLines(block, x_pos, y_pos, 2);
     }

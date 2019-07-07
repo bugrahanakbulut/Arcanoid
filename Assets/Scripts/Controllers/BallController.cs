@@ -27,15 +27,11 @@ public class BallController : MonoBehaviour, Movable {
         GameObject controllers = GameObject.Find("Controllers");
         if (controllers != null)
         {
-            Transform gameControllerGameObject = controllers.transform.Find("GameController");
-            if (gameControllerGameObject != null)
+            GameController gameController = controllers.GetComponent<GameController>();
+            if (gameController != null)
             {
-                GameController gameController = gameControllerGameObject.GetComponent<GameController>();
-                if (gameController != null)
-                {
-                    gameController.BallOutOfMap();
-                    Destroy(this.gameObject);
-                }
+                gameController.BallOutOfMap();
+                Destroy(this.gameObject);
             }
         }
     }

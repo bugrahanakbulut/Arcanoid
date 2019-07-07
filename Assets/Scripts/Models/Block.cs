@@ -24,7 +24,18 @@ public class Block : MonoBehaviour, IBlock {
         _health -= 1;
         if (_health == 0)
         {
+            NotifyLevelControllerImGone();
             Destroy(this.gameObject);
+        }
+    }
+
+    void NotifyLevelControllerImGone()
+    {
+        GameObject controllers = GameObject.Find("Controllers");
+        if (controllers != null)
+        {
+            LevelController levelController = controllers.GetComponent<LevelController>();
+            levelController.CheckIsLevelCompleted();
         }
     }
 }

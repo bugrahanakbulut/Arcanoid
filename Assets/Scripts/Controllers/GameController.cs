@@ -11,14 +11,11 @@ public class GameController : MonoBehaviour {
     private GameObject _ball;
 
     [SerializeField]
-    private GameObject[] _blocks;
-
-    private int _currentLevel;
+    private LevelController _levelController;
 
     // Use this for initialization
     void Start () {
         InitGame();
-        InitLevelTwoBlocks();
 	}
 
     void Update()
@@ -34,7 +31,7 @@ public class GameController : MonoBehaviour {
         GameObject ball = Instantiate(_ball, new Vector3(0, -4.0f), Quaternion.identity);
         ball.transform.parent = GameObject.Find("Racket(Clone" +
             ")").transform;
-        _currentLevel = 1;
+        _levelController.CreateLevel();
     }
 
     void LaunchBall()
@@ -63,9 +60,11 @@ public class GameController : MonoBehaviour {
         Debug.Log("Game Over or Player Losses 1 Health");
         RespawnBallOnRacket();
     }
-
-    void RespawnBallOnRacket()
+    public void RespawnBallOnRacket()
     {
+        GameObject ball = GameObject.Find("Ball(Clone)");
+        if (ball != null)
+            Destroy(ball);
         GameObject racket = GameObject.Find("Racket(Clone)");
         if (racket != null)
         {
@@ -77,40 +76,4 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    void CreateBlockLine(GameObject block, float x_pos, float y_pos)
-    {
-        while (x_pos < +6.0f)
-        {
-            GameObject instantiatedBlock = Instantiate(block, new Vector3(x_pos, y_pos, 0), Quaternion.identity);
-            x_pos += block.GetComponent<BoxCollider2D>().size.x * block.transform.localScale.x + 0.05f;
-            instantiatedBlock.transform.parent = GameObject.Find("Blocks").transform;
-        }
-    }
-
-    void CreateMultipleBlockLines(GameObject block, float x_pos, float y_pos, int numberOfLines)
-    {
-        float x_reset_value = (float)x_pos;
-        for (int i = 0; i < numberOfLines && y_pos > -1.5f; i++)
-        {
-            CreateBlockLine(block, x_pos, y_pos);
-            y_pos -= (block.GetComponent<BoxCollider2D>().size.y * block.transform.localScale.y + 0.05f);
-            x_pos = x_reset_value;
-        }
-    }
-
-    void InitLevelOneBlocks()
-    {
-        float y_pos = 4.5f;
-        float x_pos = -6.0f;
-        GameObject block = _blocks[0];
-        CreateBlockLine(block, x_pos, y_pos);
-    }
-
-    void InitLevelTwoBlocks()
-    {
-        float y_pos = 4.5f;
-        float x_pos = -6.0f;
-        GameObject block = _blocks[0];
-        CreateMultipleBlockLines(block, x_pos, y_pos, 2);
-    }
 }

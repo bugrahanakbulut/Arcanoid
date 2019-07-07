@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BallController : MonoBehaviour, Movable {
-
+    
     private float _ballSpeed;
 
 	// Use this for initialization

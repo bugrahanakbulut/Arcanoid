@@ -40,8 +40,9 @@ public class GameController : MonoBehaviour {
     void LaunchBall()
     {
         GameObject ball = GameObject.Find("Ball(Clone)");
-        if(ball.GetComponent<Rigidbody2D>().simulated == false)
-            ball.GetComponent<Rigidbody2D>().simulated = true;
+        if (ball != null)
+            if(ball.GetComponent<Rigidbody2D>().simulated == false)
+                ball.GetComponent<Rigidbody2D>().simulated = true;
     }
 
     void InputController()

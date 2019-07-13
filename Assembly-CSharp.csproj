@@ -62,6 +62,8 @@
      <Compile Include="Assets\Scripts\Managers\SceneManager.cs" />
      <Compile Include="Assets\Scripts\Models\Block.cs" />
      <Compile Include="Assets\Scripts\Models\Brick.cs" />
+     <Compile Include="Assets\Scripts\Models\Buff.cs" />
+     <Compile Include="Assets\Scripts\Models\ExtendBuff.cs" />
      <None Include="Assets\references.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/ascore/workspace/UnityProjects/Arcanoid/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

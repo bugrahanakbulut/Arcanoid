@@ -409,6 +409,63 @@ EdgeCollider2D:
   - {x: -6.7, y: 0}
   - {x: 6.7, y: 0}
   - {x: 6.7, y: -10}
+--- !u!1001 &1328005978
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1955137658666946, guid: 7725922bfcb22a543aab6f2531363669, type: 3}
+      propertyPath: m_Name
+      value: Racket
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994259636166228, guid: 7725922bfcb22a543aab6f2531363669, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994259636166228, guid: 7725922bfcb22a543aab6f2531363669, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994259636166228, guid: 7725922bfcb22a543aab6f2531363669, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994259636166228, guid: 7725922bfcb22a543aab6f2531363669, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994259636166228, guid: 7725922bfcb22a543aab6f2531363669, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994259636166228, guid: 7725922bfcb22a543aab6f2531363669, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994259636166228, guid: 7725922bfcb22a543aab6f2531363669, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994259636166228, guid: 7725922bfcb22a543aab6f2531363669, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994259636166228, guid: 7725922bfcb22a543aab6f2531363669, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994259636166228, guid: 7725922bfcb22a543aab6f2531363669, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994259636166228, guid: 7725922bfcb22a543aab6f2531363669, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7725922bfcb22a543aab6f2531363669, type: 3}
 --- !u!1 &1356581358
 GameObject:
   m_ObjectHideFlags: 0

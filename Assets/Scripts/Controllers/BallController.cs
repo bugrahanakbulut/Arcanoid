@@ -6,6 +6,8 @@ public class BallController : MonoBehaviour, Movable {
     
     private float _ballSpeed;
 
+    private BuffManager _buffManager;
+
 	// Use this for initialization
 	void Start () {
         InitBall();
@@ -15,6 +17,7 @@ public class BallController : MonoBehaviour, Movable {
     void InitBall()
     {
         _ballSpeed = 10.0f;
+        _buffManager = GameObject.Find("Managers").GetComponent<BuffManager>();
     }
 
     private float HitFactor(Vector2 ballPos, Vector2 racketPos, float racketWidth)
@@ -40,7 +43,9 @@ public class BallController : MonoBehaviour, Movable {
     {
         if (other.gameObject.tag == "Block")
         {
+            _buffManager.GetBuff(other.transform.position);
             other.gameObject.GetComponent<Block>().DoDamage();
+            
         }
         else if (other.gameObject.tag == "Racket")
         {

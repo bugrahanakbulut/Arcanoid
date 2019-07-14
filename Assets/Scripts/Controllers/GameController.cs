@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour {
     void LaunchBall()
     {
         GameObject ball = GameObject.Find("Ball(Clone)");
+        ball.transform.parent = _racket.transform.parent;
         if (ball != null)
             if(ball.GetComponent<Rigidbody2D>().simulated == false)
                 ball.GetComponent<Rigidbody2D>().simulated = true;

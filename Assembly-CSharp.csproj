@@ -59,11 +59,13 @@
      <Compile Include="Assets\Scripts\Controllers\RacketController.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IBlock.cs" />
      <Compile Include="Assets\Scripts\Interfaces\Movable.cs" />
+     <Compile Include="Assets\Scripts\Managers\BuffManager.cs" />
      <Compile Include="Assets\Scripts\Managers\SceneManager.cs" />
      <Compile Include="Assets\Scripts\Models\Block.cs" />
      <Compile Include="Assets\Scripts\Models\Brick.cs" />
      <Compile Include="Assets\Scripts\Models\Buff.cs" />
      <Compile Include="Assets\Scripts\Models\ExtendBuff.cs" />
+     <Compile Include="Assets\Scripts\Utils.cs" />
      <None Include="Assets\references.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/ascore/workspace/UnityProjects/Arcanoid/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
